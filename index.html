@@ -1,0 +1,216 @@
+<HTML>
+<head>
+<body style="background-color:#F6F5F5;">
+
+<style>
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+ibody{
+    margin:0;
+    min-height: 100%;
+    min-width:100%;
+    
+}
+
+.navbar{
+    top:0;
+    position: fixed;
+    width : 100%;
+    
+}
+body {
+	font-family: verdana;
+    background-color : #F6F5F5 ;
+    position : relative
+    style: #232435;
+    font-size:16;
+
+}
+
+
+h1 {text-align: left;}
+p {text-align: justify;
+    text-justify: inter-word;
+}
+div {text-align: left;}
+
+.content{
+    margin-left:0;
+    padding : 4% 25% 2% 25%;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #34495E;
+    max-width:1500px;
+    font-family: Garamond;
+    font-size:20;
+}
+
+li {
+    float: right;
+}
+
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: grey;
+}
+
+
+.header-left {
+  float: left;
+}
+
+
+
+</style>
+
+<div class="container">
+<div class=navbar>
+
+<ul id=menu>
+
+<div class = "header-left">
+<li>
+<a href="https://sonalipednekar.netlify.app/" > Home </a>
+</li>
+</div>
+<li>
+
+<li>
+<a href="https://sonalipednekar.georgetown.domains/big_data/Conclusions/Conclusions.html" > Conclusion </a>
+</li>
+<li>
+<a href="https://sonalipednekar.georgetown.domains/big_data/ML/MachineLearning.html" >   Machine Learning</a>
+</li>
+<li>
+<a href="https://sonalipednekar.georgetown.domains/big_data/NLP/NaturalLanguageProcessing.html" >   Natural Language Processing</a>
+</li>
+<li>
+<a href="https://sonalipednekar.georgetown.domains/big_data/EDA/ExploratoryDataAnalysis.html" >  Exploratory Data Analysis </a>
+</li>
+<li>
+<a href="https://sonalipednekar.georgetown.domains/big_data/Introdution.html">Introduction</a>
+</li>
+</ul>
+</div>
+
+
+
+
+<div class="content">
+    <h1>Reddit Analysis</h1>
+   <p>
+    Reddit is a social news website and forum where content is socially curated and promoted by site members through voting. The site name is a play on the words "I read it". It combines web content, social news, a forum, and a social network into one giant beast of a platform. The site is composed of hundreds of subcommunities, known as subreddits. Each subreddit has a specific topic, such as technology, politics or music. Reddit's homepage, or the front page, as it is often called, is composed of the most popular posts from each default subreddit. The default list is predetermined and includes subreddits such as "pics," "funny," "videos," "news" and "gaming."
+
+Reddit site members, also known as redditors, submit content which is then voted upon by other members. The goal is to send well-regarded content to the top of the site's front page. Content is voted on via upvotes and downvotes: arrows on which users click to the left of a post. The more upvotes a post gets, the more popular it becomes, and the higher up it appears on its respective subreddit or the front page.
+</p> 
+
+<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/lNMyVfxjfzIJO" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
+
+
+<p> For the purpose of this project, the analysis is performed on a subreddit : <a href="https://www.reddit.com/r/PublicFreakout/" target="_blank"> Public Freakout</a>. Public Freakout Videos are recorded footage of private individuals exhibiting extremely emotional or bizarre behaviour in public, typically featuring loud arguments, mental breakdowns, rants, or intoxicated rambling. Public Freakout is a subreddit dedicated to people freaking out, melting down, losing their cool, or being weird in public. The tagline of each post is a descriptive text regarding each post, and these taglines can be extracted to understand and work on this subreddit. People love consuming daily content, be it hilarious or silly or be it some informative or serious issue around the world. The users of this subreddit might use it to stay updated or scroll through some funny videos.</p>
+
+
+
+
+<b>The goal of the portfolio is to provide answers to the following questions:</b>
+
+<p><b> 1. Business Question : Should Authors write long comments to increase score.</b>
+<br>
+&ensp;&nbsp; Technical Proposal: Use EDA to display the length of the post (number of characters) and compare it with the average score of comments for that length.
+<br>
+<br>
+</p>
+
+<p> <b>2. Business Question : Top 10 most frequent authors.</b>
+<br>
+&ensp;&nbsp; Technical Proposal: Use EDA to display the top 10 most frequent authors 
+
+<br>
+<br>
+</p>
+
+<p> <b>3. Business Question : Are the top frequent users controversial?</b>
+<br>
+&ensp;&nbsp; Technical Proposal: Use EDA to display the mean controversiality of the top 10 authors.
+<br>
+<br>
+</p>
+
+<p><b>4. Business Question : Is there a relationship between score and total awards for the top most frequent user.  </b> 
+<br>
+&ensp;&nbsp; Technical Proposal: Use EDA to plot the score of the posts for each number of awards for the most active user. <br>
+<br>
+</p>
+
+<p><b>5. Business Question : Find the hottest comment time of the day.</b> 
+<br>
+&ensp;&nbsp; Technical Proposal:  Use EDA to visualize the number of comments for each hour of the day. 
+<br>
+<br>
+</p>
+
+<p><b>6. Business Question : Find the number of comments for every month of the timeframe.</b> 
+<br>
+&ensp;&nbsp; Technical Proposal: Use EDA to visualize the number of comments for each month of the timeframe.   
+<br>
+<br>
+</p>
+
+<p><b>7. Business Question : Find the number of comments for each sentiment.</b> 
+<br>
+&ensp;&nbsp; Technical Proposal: Use NLP to extract sentiment of post and then visualize the plot through barplot.
+<br>
+<br>
+</p>
+
+<p><b>8. Business Question :Find the number of comments for every month of the timeframe for each sentiment. </b> 
+<br>
+&ensp;&nbsp; Technical Proposal: Use NLP to extract sentiment of post and then visualize the plot through lineplot.
+<br>
+<br>
+</p>
+
+<p><b>9. Business Question : Determine the score the comment will receive.</b> 
+<br>
+&ensp;&nbsp; Technical Proposal:  Use machine learning to create a model that can predict how many score the comment will receive.
+<br>
+<br>
+</p>
+
+ 
+<p><b>10. Business Question : Determine the controversiality of the comment.</b> 
+<br>
+&ensp;&nbsp; Technical Proposal:  Use machine learning to create a model that can predict the controversiality of the comment.
+<br>
+<br>
+</p>
+
+
+
+<p>Reference : <a href="https://www.techtarget.com/searchcio/definition/Reddit#:~:text=Reddit%20is%20a%20social%20news,use%20the%20website's%20basic%20features." target="_blank">TechTarget</a> </p>
+
+</div>  
+
+
+
+</div>
+
+
+
+</HTML>

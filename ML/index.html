@@ -1,0 +1,245 @@
+<HTML>
+<head>
+<body style="background-color:#F6F5F5;">
+
+<style>
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+ibody{
+    margin:0;
+    min-height: 100%;
+    min-width:100%;
+    
+}
+
+img{
+        max-width: 100%;
+        max-height: 100%;
+        display: block; /* remove extra space below image */
+        image-rendering: auto;
+    }
+
+.crisp-edges {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+.pixelated {
+  image-rendering: pixelated;
+}
+
+.smooth {
+  image-rendering: smooth;
+}
+
+.high-quality {
+  image-rendering: high-quality;
+}
+
+
+
+.navbar{
+    top:0;
+    position: fixed;
+    width : 100%;
+    
+}
+body {
+	font-family: verdana;
+    background-color : #F6F5F5 ;
+    position : relative
+    style: #232435;
+    font-size:16;
+
+}
+
+
+h1 {text-align: left;}
+p {text-align: justify;
+    text-justify: inter-word;
+}
+div {text-align: left;}
+
+.content{
+    margin-left:0;
+    padding : 4% 25% 2% 25%;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #34495E;
+    max-width:1500px;
+    font-family: Garamond;
+    font-size:20;
+}
+
+li {
+    float: right;
+}
+
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: grey;
+}
+
+
+.header-left {
+  float: left;
+}
+
+
+
+</style>
+
+<div class="container">
+<div class=navbar>
+
+<ul id=menu>
+
+<div class = "header-left">
+<li>
+<a href="https://sonalipednekar.netlify.app/" > Home </a>
+</li>
+</div>
+<li>
+
+<li>
+<a href="https://sonalipednekar.georgetown.domains/big_data/Conclusions/Conclusions.html" > Conclusion </a>
+</li>
+<li>
+<a href="https://sonalipednekar.georgetown.domains/big_data/ML/MachineLearning.html" >   Machine Learning</a>
+</li>
+<li>
+<a href="https://sonalipednekar.georgetown.domains/big_data/NLP/NaturalLanguageProcessing.html" >   Natural Language Processing</a>
+</li>
+<li>
+<a href="https://sonalipednekar.georgetown.domains/big_data/EDA/ExploratoryDataAnalysis.html" >  Exploratory Data Analysis </a>
+</li>
+<li>
+<a href="https://sonalipednekar.georgetown.domains/big_data/Introdution.html">Introduction</a>
+</li>
+</ul>
+</div>
+
+
+
+
+<div class="content">
+<h1>Machine Learning </h1>
+
+<p>
+    To view the complete code of the ML : <a href="https://sonalipednekar.georgetown.domains/big_data/ML/project_ml.html" target="_blank"> click here</a>
+</p>
+
+
+
+   <p>
+    Machine learning (ML) is a type of artificial intelligence (AI) that allows software applications to become more accurate at predicting outcomes without being explicitly programmed to do so. Machine learning algorithms use historical data as input to predict new output values.Machine learning is important because it gives enterprises a view of trends in customer behavior and business operational patterns, as well as supports the development of new products. Many of today's leading companies, such as Facebook, Google and Uber, make machine learning a central part of their operations. Machine learning has become a significant competitive differentiator for many companies.
+</p> 
+
+<p>
+    Using machine learning algorithms for big data analytics is a logical step for companies looking to maximize their data's potential value. Machine learning tools use data-driven algorithms and statistical models to analyze data sets and then draw inferences from identified patterns or make predictions based on them. The algorithms learn from the data as they run against it, as opposed to traditional rules-based analytics systems that follow explicit instructions..
+
+</p>
+<center><img alt="https://sonalipednekar.georgetown.domains/big_data/ML/ml.jpg"  src="https://sonalipednekar.georgetown.domains/big_data/ML/ml.jpg" /> </center>
+
+
+<h3>
+    <b> Analysis Report</b>
+</h3>
+<p>
+    In the Executive Summary, the ml thought process was summarized in a non-technical format. In this section, the technical aspects are explained in a detailed fashion: the steps taken and the reasoning behind every decision. As mentioned in the Summary, this subreddit consists of 18million+ rows so the concepts of big data are applied to leverage the data. The data for this analysis is picked up from the last transformation performed in nlp. 
+</p>
+<h3>
+    Score Prediction
+</h3>
+<p> We tried to answer the business question (predicting the score of a comment) using different features such as sentiment, controversiality,total_awards_received,comment_length and hour. </p>
+
+<p>Before starting to build any model, ML transformations are some necessary steps that are supposed to be performed. All the categorical variables are checked for unusual values.
+The data is split into train-test dataset with 80% values in train dataset. The hour and sentiment variable are the only string type variable and hence transformations like stringindexer and onehot encoding are staged on it. All the features or predicting variables are gathered under one column using vector assembler.  </p>
+
+<h4>
+    Linear Regression
+</h4>
+
+<p>We first tried the linear regression model as it is a basic regression problem. The pipeline is created with all the stages (stringindexer,onehotencoder,vectorassembler and the linear regression model). 3-fold crossvalidation is applied to find the best hyperparameters for the model.The different parameter applied are regParam, elasticNetParam and maxIter.The model is fit on the train data and transformed on the test data to check.The table with all the evaluation metrics of the model is attached below.</p>
+
+<center><img alt="https://sonalipednekar.georgetown.domains/big_data/ML/Plots/lr_1.PNG"  src="https://sonalipednekar.georgetown.domains/big_data/ML/Plots/lr_1.PNG"  ></center>
+
+<h4>
+    Decision Tree
+</h4>
+
+<p>Next we tried the decision tree model. The pipeline is created with all the stages (stringindexer,onehotencoder,vectorassembler and the decision tree model). 3-fold crossvalidation is applied to find the best hyperparameters for the model.The different parameter applied are maxDepth and maxBins.The model is fit on the train data and transformed on the test data to check.The table with all the evaluation metrics of the model is attached below.</p>
+
+<center><img alt="https://sonalipednekar.georgetown.domains/big_data/ML/Plots/dt1.PNG"  src="https://sonalipednekar.georgetown.domains/big_data/ML/Plots/dt1.PNG"  ></center>
+<p> The evaluation metrics for each model is tabulated</p>
+
+<center><img alt="https://sonalipednekar.georgetown.domains/big_data/ML/Plots/table1.PNG"  src="https://sonalipednekar.georgetown.domains/big_data/ML/Plots/table1.PNG"  ></center>
+
+<h3>
+    Controversiality Prediction
+</h3>
+<p> We tried to answer the business question (predicting the controversiality of a comment) using different features such as author_premium,locked, no_follow, stickied,total_awards_received,comment_length,hour and score. </p>
+
+<p>Before starting to build any model, ML transformations are some necessary steps that are supposed to be performed. All the categorical variables are checked for unusual values. The main target variable is checked for balance. It is found that the data is highly imbalanced, hence downsampling is necessary. After downsampling, each category in controversiality (0,1) has around 700K values.</p>
+
+<p>The data is split into train-test dataset with 80% values in train dataset. The hour variable is the only string type variable and hence transformations like stringindexer and onehot encoding are staged on it. All the features or predicting variables are gathered under one column using vector assembler.  </p>
+
+<h4>
+    Logistic Regression
+</h4>
+
+<p>We first tried the logistic regression model as it is a binary classification problem. The pipeline is created with all the stages (stringindexer,onehotencoder,vectorassembler and the logistic regression model). 3-fold crossvalidation is applied to find the best hyperparameters for the model.The different parameter applied are regParam, elasticNetParam and maxIter.The model is fit on the train data and transformed on the test data to check. The accuracy of this model is 63%.</p>
+
+
+<h4>
+    Random Forest
+</h4>
+
+<p>The next model that we tried was a ensemble method of decision tree which is random forest. The pipeline is created with all the stages (stringindexer,onehotencoder,vectorassembler and the random forest model). 3-fold crossvalidation is applied to find the best hyperparameters for the model.The different parameter applied are maxDepth, maxBins and numTrees.The model is fit on the train data and transformed on the test data to check. The accuracy of this model is 55%.</p>
+
+<center><img alt="https://sonalipednekar.georgetown.domains/big_data/ML/Plots/table2.PNG"  src="https://sonalipednekar.georgetown.domains/big_data/ML/Plots/table2.PNG" /></center>
+
+<p>The accuracy of both the models is not that great and can be improved by trying different models or shuffling feature variables.</p>
+<h4>
+    ROC Curve
+</h4>
+
+<center><img alt="https://sonalipednekar.georgetown.domains/big_data/ML/Plots/roc_lr.PNG" src="https://sonalipednekar.georgetown.domains/big_data/ML/Plots/roc_lr.PNG"  ></center>
+
+<p>ROC curves are frequently used to show in a graphical way the connection/trade-off between clinical sensitivity and specificity for every possible cut-off for a test or a combination of tests. In addition the area under the ROC curve gives an idea about the benefit of using the test(s) in question.An ROC curve (receiver operating characteristic curve) is a graph showing the performance of a classification model at all classification thresholds. This curve plots two parameters:
+<div>
+- True Positive Rate <br>
+- False Positive Rate
+</div>
+An ROC curve plots TPR vs. FPR at different classification thresholds. Lowering the classification threshold classifies more items as positive, thus increasing both False Positives and True Positives. Opposing to the accuracy, according to the roc curve, random forest is a better predictor.
+</p>
+
+<p>Reference : <a href="https://www.techtarget.com/searchenterpriseai/definition/machine-learning-ML#:~:text=Machine%20learning%20(ML)%20is%20a,to%20predict%20new%20output%20values." target="_blank">Tech Target</a> </p>
+
+
+
+</div>  
+
+</div>  
+
+
+</div>
+
+
+</HTML>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .error {
+        color: red;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@4.17.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-f69c3b54f352abc56fe13c14448f063a"}, "mark": "bar", "encoding": {"color": {"field": "sentiment", "type": "nominal"}, "tooltip": [{"field": "controversiality", "type": "nominal"}, {"field": "average_score", "type": "quantitative"}, {"field": "sentiment", "type": "nominal"}], "x": {"axis": {"title": "Covid Terms"}, "field": "controversiality", "type": "nominal"}, "y": {"axis": {"title": "Score"}, "field": "average_score", "type": "quantitative"}}, "height": 500, "title": {"text": "Covid Sentiment", "subtitle": "Sentiment of authors through each comment revolving around covid"}, "width": 500, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-f69c3b54f352abc56fe13c14448f063a": [{"controversiality": 0, "sentiment": "neutral", "average_score": 15.731455497859258}, {"controversiality": 1, "sentiment": "negative", "average_score": 0.6144336834713404}, {"controversiality": 1, "sentiment": "positive", "average_score": 0.3619774973596332}, {"controversiality": 0, "sentiment": "negative", "average_score": 14.649875335629206}, {"controversiality": 1, "sentiment": "neutral", "average_score": 0.5500021304699817}, {"controversiality": 0, "sentiment": "positive", "average_score": 15.488053330822497}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

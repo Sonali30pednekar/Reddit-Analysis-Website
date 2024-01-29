@@ -1,0 +1,206 @@
+<HTML>
+<head>
+<body style="background-color:#F6F5F5;">
+
+<style>
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+ibody{
+    margin:0;
+    min-height: 100%;
+    min-width:100%;
+    
+}
+
+img{
+        max-width: 100%;
+        max-height: 100%;
+        display: block; /* remove extra space below image */
+        image-rendering: auto;
+    }
+
+.crisp-edges {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+.pixelated {
+  image-rendering: pixelated;
+}
+
+.smooth {
+  image-rendering: smooth;
+}
+
+.high-quality {
+  image-rendering: high-quality;
+}
+
+
+.navbar{
+    top:0;
+    position: fixed;
+    width : 100%;
+    
+}
+body {
+	font-family: verdana;
+    background-color : #F6F5F5 ;
+    position : relative
+    style: #232435;
+    font-size:16;
+
+}
+
+
+h1 {text-align: left;}
+p {text-align: justify;
+    text-justify: inter-word;
+}
+div {text-align: left;}
+
+.content{
+    margin-left:0;
+    padding : 4% 25% 2% 25%;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #34495E;
+    max-width:1500px;
+    font-family: Garamond;
+    font-size:20;
+}
+
+li {
+    float: right;
+}
+
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: grey;
+}
+
+
+.header-left {
+  float: left;
+}
+
+
+
+</style>
+
+<div class="container">
+<div class=navbar>
+
+<ul id=menu>
+
+<div class = "header-left">
+<li>
+<a href="https://sonalipednekar.netlify.app/" > Home </a>
+</li>
+</div>
+<li>
+
+<li>
+<a href="https://sonalipednekar.georgetown.domains/big_data/Conclusions/Conclusions.html" > Conclusion </a>
+</li>
+<li>
+<a href="https://sonalipednekar.georgetown.domains/big_data/ML/MachineLearning.html" >   Machine Learning</a>
+</li>
+<li>
+<a href="https://sonalipednekar.georgetown.domains/big_data/NLP/NaturalLanguageProcessing.html" >   Natural Language Processing</a>
+</li>
+<li>
+<a href="https://sonalipednekar.georgetown.domains/big_data/EDA/ExploratoryDataAnalysis.html" >  Exploratory Data Analysis </a>
+</li>
+<li>
+<a href="https://sonalipednekar.georgetown.domains/big_data/Introdution.html">Introduction</a>
+</li>
+</ul>
+</div>
+
+
+
+
+<div class="content">
+<h1>Conclusion </h1>
+
+
+   <p>
+    Reddit is an American social news aggregation, web content rating, and discussion website. Registered members submit content to the site such as links, text posts, images, and videos, which are then voted up or down by other members. All the users are anonymous, hence the users can post/comment without any hesitation (except for hateful or vulgur posts which are banned by mods).
+</p> 
+
+<p>
+    There are many subreddits on this domains ranging from news/politics to gaming and funny content. For the purpose of this analysis, I have selected the <a href="https://www.reddit.com/r/PublicFreakout/" target="_blank"> Public Freakout</a> subreddit. Public Freakout is a subreddit dedicated to people freaking out, melting down, losing their cool, or being weird in public. The tagline of each post is a descriptive text regarding each post, and these taglines can be extracted to understand and work on this subreddit. People love consuming daily content, be it hilarious or silly or be it some informative or serious issue around the world. The users of this subreddit might use it to stay updated or scroll through some funny videos. 
+
+</p>
+
+<div style="width:100%;height:0;padding-bottom:65%;position:relative;"><iframe src="https://giphy.com/embed/xUA7bas5vBwwdofGow" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>
+
+
+
+<p>
+The analysis is divided into three parts : Exploratory Data Analysis, Natural Language Processing and Machine Learning. All the business questions revolve around these three processes. 
+</p>
+<center><img alt="https://sonalipednekar.georgetown.domains/big_data/Conclusions/Plots/conclusion_pipeline.PNG"  src="https://sonalipednekar.georgetown.domains/big_data/Conclusions/Plots/conclusion_pipeline.PNG" ></center>
+
+
+<p>EDA is a necessary step to understand the data and explore the variables before deep-diving into the analysis. Some basic graphs were plotted to understand the Reddit data and look at the patterns and abnormalities.</p>
+
+<p>As explained above the EDA is a vital key of any data science project, there were some interesting questions that were explored in this section. Some of the intermediary questions could not be plotted because of the limitations of this dataset and different columns than the requirement for the question. Reddit data analysis is performed on a very high volume of data (18 million + rows) and it is important to understand the structure and integral pieces of the data before conducting any analysis.
+
+<p>The relationship between the score and the length of the comment is very erratic. Comparatively, the average score is low if the length of comment is small. If the author is aiming to increase his score, he should target to keep his character count more than 3000+.</p>
+
+<center><iframe src="https://sonalipednekar.georgetown.domains/big_data/EDA/Plots/fig1.1.html" width=650 height=600 style="border:none;"></iframe></center>
+
+<p>The most active users and their controversiality is plotted to gain insights on the activity of the reddit users in the PublicFreakout subreddit. It is observed that, for the most active user, even if the score of the comments increases, the number of awards does not increase and is still consistently zero.</p>
+
+<center><iframe src="https://sonalipednekar.georgetown.domains/big_data/EDA/Plots/fig2.html" width=650 height=600 style="border:none;"></iframe></center>
+
+<p>Moving on to the activity of the users, the timeframe with the highest activity (hottest comment time) is between 3pm and 7pm. Now to the bigger picture of the timeline, there is a spike in the frequency of comments after March 2020, this is the exact time when covid hit. This spike makes sense as people were clueless regarding the situation and freaking out and must have found Reddit the perfect platform to vent out their emotions being anonymous. After this jump, the number of Reddit users increases. A new dataset is joined to explore the impact of Covid on the activity of the Subreddit.</p>
+
+<center><iframe src="https://sonalipednekar.georgetown.domains/big_data/EDA/Plots/fig3.html" width=650 height=630 style="border:none;"></iframe></center>
+
+<p>The next section in our analysis is NLP. Natural language processing (NLP) is the ability of a computer program to understand human language as it is spoken and written -- referred to as natural language. </p>
+
+<p>We found out the sentiment of each comment and tried to conduct our analysis revolving the sentiments. We looked at the fluctuation of sentiments in the comments  and the relation between the different flags (Pandemic Freakout and Arrest Freakout) and the sentiment.</p>
+<center><iframe src="https://sonalipednekar.georgetown.domains/big_data/NLP/Plots/fig1.html" width=650 height=630 style="border:none;"></iframe></center>
+
+
+<p>The last section of this analysis is Machine Learning. Machine learning algorithms use historical data as input to predict new output values.Machine learning (ML) is a type of artificial intelligence (AI) that allows software applications to become more accurate at predicting outcomes without being explicitly programmed to do so. </p>
+
+
+<p>In this section, we tried to predict the score of the comment using different features. Two models were created to predict the score of the comment, comparatively less features are used to predict the score and hence it cannot be accurately predicted. With the available comment data, it is difficult to predict the score value accurately. The second business question that I tried to answer was predicting the controversiality of a comment using features of the reddit comment. Two models were used to predict the label, both have pretty poor accuracy as accuracy in 60s to predict a binary label is almost like flipping a coin. To improve the prediction, either a different model can be used or shuffling the predictor variables.</p>
+
+
+<h3>
+    Future Prospects
+</h3>
+
+<p>The future plan is to identify the locations where the people are freaking out the most by extracting the main post from reddit api. On these post we can use NER models to extract the GPE and perform analysis to answer this business question. The next section that we can explore is to determine the category of the reddit posts. The posts on this subreddit are divided into different sections or flairs (Eg. Happy Freakout, Pandemic Freakout, Karen Freakout, etc.). We can try predicting which flair the post will be categorized in. For the next section, we can determine if the posts are relevant to the world affairs of a specific timeframe (Eg. Russia/Ukraine war).Pull out specific dates of the posts and match it with the current affairs going on around that timeframe. The final prospectic aspect that we can explore through this project is to check if a negative connotation point towards a specific class of people. For this we can provide a list of keywords to the machine learning model and based on texts, they will be categorized into different classes of people, once that is determined a text analysis will determine if a post belonging to a specific class is negative or positive.  
+
+</p>
+
+
+</div>  
+
+
+</div>
+
+
+</HTML>

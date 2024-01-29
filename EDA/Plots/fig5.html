@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .error {
+        color: red;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@4.17.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-c89e5c29c76afdf9b38958a287650606"}, "mark": "bar", "encoding": {"color": {"value": "#7fc97f"}, "tooltip": [{"field": "author", "type": "nominal"}, {"field": "controversiality_mean", "type": "quantitative"}], "x": {"axis": {"title": "Mean of Controversiality for a user"}, "field": "controversiality_mean", "type": "quantitative"}, "y": {"axis": {"title": "Author"}, "field": "author", "sort": "-x", "type": "nominal"}}, "height": 500, "resolve": {"scale": {"x": "independent"}}, "title": {"text": "Is the top user bound to be more controversial?", "subtitle": "Relationship between Top Users and Controversiality"}, "width": 500, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-c89e5c29c76afdf9b38958a287650606": [{"author": "a-mirror-bot", "author_freq": 66720, "controversiality_sum": 576, "controversiality_mean": 0.008633093525179856}, {"author": "VredditDownloader", "author_freq": 20055, "controversiality_sum": 4, "controversiality_mean": 0.00019945150835203192}, {"author": "SaveVideo", "author_freq": 13328, "controversiality_sum": 10, "controversiality_mean": 0.0007503001200480192}, {"author": "SajuPacapu", "author_freq": 10619, "controversiality_sum": 846, "controversiality_mean": 0.07966851869290893}, {"author": "PF_Mirror_Bot", "author_freq": 8276, "controversiality_sum": 87, "controversiality_mean": 0.010512324794586757}, {"author": "Dolt-Dragoman", "author_freq": 7284, "controversiality_sum": 522, "controversiality_mean": 0.07166392092257001}, {"author": "felixjawesome", "author_freq": 6639, "controversiality_sum": 510, "controversiality_mean": 0.07681879801174876}, {"author": "CantStopPoppin", "author_freq": 5853, "controversiality_sum": 710, "controversiality_mean": 0.12130531351443705}, {"author": "Pardusco", "author_freq": 5397, "controversiality_sum": 644, "controversiality_mean": 0.11932555123216602}, {"author": "AutoModerator", "author_freq": 5239, "controversiality_sum": 0, "controversiality_mean": 0.0}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

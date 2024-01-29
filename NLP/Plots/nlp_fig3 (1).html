@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .error {
+        color: red;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@4.17.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-e0e2838b1791211d2828ea7346219b67"}, "mark": "bar", "encoding": {"color": {"field": "is_pandemic_freakout", "type": "nominal"}, "tooltip": [{"field": "sentiment", "type": "nominal"}, {"field": "is_pandemic_freakout", "type": "nominal"}, {"field": "count", "type": "quantitative"}], "x": {"axis": {"title": "Sentiment"}, "field": "sentiment", "type": "nominal"}, "y": {"axis": {"title": "Count of Comments"}, "field": "count", "type": "quantitative"}}, "height": 500, "title": {"text": "Number of Comments", "subtitle": "Split by Sentiment and Pandemic Freakout flag"}, "width": 500, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-e0e2838b1791211d2828ea7346219b67": [{"is_pandemic_freakout": 1, "sentiment": "neutral", "count": 11590}, {"is_pandemic_freakout": 0, "sentiment": "negative", "count": 7068553}, {"is_pandemic_freakout": 0, "sentiment": "neutral", "count": 957231}, {"is_pandemic_freakout": 1, "sentiment": "negative", "count": 94731}, {"is_pandemic_freakout": 1, "sentiment": "positive", "count": 101404}, {"is_pandemic_freakout": 0, "sentiment": "positive", "count": 9778643}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
